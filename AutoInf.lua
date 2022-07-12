@@ -101,9 +101,14 @@ end
 
 
 if game.PlaceId == 8304191830 then
-    join()
-    Create()
-    start()
+    while true do
+        join()
+        task.wait(1)
+        Create()
+        task.wait(1)
+        start()
+        task.wait()
+    end
 elseif game.PlaceId == 8349889591 then
     task.wait(20)
     startWave()
