@@ -42,12 +42,18 @@ end
 end
 end
 
-local function place3() 
+local function place3()
+  while true do
   if game:GetService("Workspace")["_wave_num"].Value < getgenv().wavetolose then
-        local args = {
+    local args = {
     [1] = getgenv().id,
     [2] = CFrame.new(-2949.064453125, 91.80620574951172, -698.9860229492188) * CFrame.Angles(0, -0, -0)
-}
+    }
+      game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+      end
+    wait()
+  end
+end
 
 game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
 end
@@ -98,18 +104,20 @@ end
 end
 end
 
-local function place3() 
-  if game:GetService("Workspace")["_wave_num"].Value < getgenv().wavetolose then
-        local args = {
-    [1] = getgenv().id,
-    [2] = CFrame.new(-2949.064453125, 91.80620574951172, -698.9860229492188) * CFrame.Angles(0, -0, -0)
-}
-
-game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+function place3()
+	while true do
+	if game:GetService("Workspace")["_wave_num"].Value < getgenv().wavetolose then
+		local args = {
+		[1] = getgenv().id,
+		[2] = CFrame.new(-2949.064453125, 91.80620574951172, -698.9860229492188) * CFrame.Angles(0, -0, -0)
+		}
+  		game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+  		end
+  	wait()
+	end
 end
-end
 
-function upgrade()
+local function upgrade()
 	while true do
 		for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
 			if v._stats.upgrade.Value < 20 then 
@@ -345,6 +353,7 @@ else
 task.wait()
 place()
 place3()
+upgrade()
 upgrade()
 start()
 sell()
