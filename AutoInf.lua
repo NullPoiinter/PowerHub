@@ -99,15 +99,12 @@ function teleport()
     end
 end
 
-
 if game.PlaceId == 8304191830 then
     while true do
         join()
-        task.wait(1)
         Create()
-        task.wait(1)
         start()
-        task.wait()
+    wait()
     end
 elseif game.PlaceId == 8349889591 then
     task.wait(20)
