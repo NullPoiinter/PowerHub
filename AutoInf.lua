@@ -237,7 +237,6 @@ end
 else
 task.wait()
 place()
-place3()
 upgrade()
 start()
 sell()
