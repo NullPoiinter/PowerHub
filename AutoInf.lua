@@ -1,3 +1,4 @@
+repeat wait() until game:IsLoaded()
 
 function join()
     local args = {
