@@ -42,7 +42,7 @@ end
 end
 end
 
-local function place3()
+function place3()
   while true do
   if game:GetService("Workspace")["_wave_num"].Value < getgenv().wavetolose then
     local args = {
@@ -57,7 +57,7 @@ end
 
 
 
-local function upgrade()
+function upgrade()
   while true do
     for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
       if game:GetService("Workspace")["_wave_num"].Value > 4 then
@@ -179,9 +179,9 @@ end
 else
 task.wait()
 place()
-task.wait(5)
-place3()
 upgrade()
+task.wait(2)
+place3()
 start()
 sell()
 teleport()
