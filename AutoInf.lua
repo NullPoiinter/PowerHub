@@ -63,6 +63,7 @@ function autoPlace()
 	end
 end
 
+game.Players.LocalPlayer.PlayerGui.MessageGui.Enabled = false
 
 
 function webhook()
