@@ -95,16 +95,20 @@ function teleport()
             webhook()
             game:GetService("ReplicatedStorage").endpoints.client_to_server.teleport_back_to_lobby:InvokeServer()
         end
-    wait()
+    wait(5)
     end
 end
 
 if game.PlaceId == 8304191830 then
     while true do
-        join()
-        Create()
-        start()
-    wait()
+    join()
+    task.wait(1)
+    Create()
+    task.wait(1)
+    start()
+    task.wait()
+    start()
+    task.wait(5)
     end
 elseif game.PlaceId == 8349889591 then
     task.wait(20)
