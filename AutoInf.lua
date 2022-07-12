@@ -63,20 +63,6 @@ function autoPlace()
 	end
 end
 
-function place() -- place function if there is another erwin on the map
-    if game:GetService("Workspace")["_wave_num"].Value < getgenv().wavetolose then
-    for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
-        if v.Name == getgenv().unit then
-            local args = {
-        [1] = v._stats.uuid.Value,
-        [2] = CFrame.new(-2949.064453125, 91.80620574951172, -698.9860229492188) * CFrame.Angles(0, -0, -0)
-    }
-    
-    game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
-    end
-    end
-    end
-end
 
 
 function webhook()
@@ -108,6 +94,7 @@ function teleport()
             webhook()
             game:GetService("ReplicatedStorage").endpoints.client_to_server.teleport_back_to_lobby:InvokeServer()
         end
+    wait()
     end
 end
 
@@ -119,7 +106,6 @@ if game.PlaceId == 8304191830 then
 elseif game.PlaceId == 8349889591 then
     task.wait(20)
     startWave()
-    place()
     autoPlace()
     AutoUpgrade()
     teleport()
