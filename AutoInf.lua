@@ -22,9 +22,9 @@ end
 
 
 local function start() -- starts the game
-if game:GetService("Workspace")["_wave_num"].Value < 1 then
-game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_start:InvokeServer()
-end
+  if game:GetService("Workspace")["_wave_num"].Value < 1 then
+    game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_start:InvokeServer()
+  end
 end
 
 local function place() -- place function if there is another erwin on the map
@@ -72,7 +72,6 @@ local function upgrade()
     wait()
   end
 end
-
 
 local function join() -- join teleporter
 local args = {
@@ -151,16 +150,16 @@ end
 end
 
 if game.PlaceId == 8304191830 then
-while true do
-join()
-task.wait(1)
-Create()
-task.wait(1)
-start2()
-task.wait()
-WatermarkForIdiotYter()
-task.wait(5)
-end
+  while true do
+    join()
+  task.wait(1)
+    Create()
+  task.wait(1)
+    start2()
+  task.wait()
+    WatermarkForIdiotYter()
+  task.wait(5)
+  end
 elseif game.PlaceId == 8349889591 then
 repeat wait() until game:IsLoaded()
 task.wait(20) -- Waits for the game remotes to load (This is needed)
@@ -180,6 +179,7 @@ end
 else
 task.wait()
 place()
+task.wait(5)
 place3()
 upgrade()
 start()
