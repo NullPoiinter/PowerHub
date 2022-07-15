@@ -57,7 +57,12 @@ if game.Players.LocalPlayer.Character.Head:FindFirstChild("_overhead") then
 	workspace[game.Players.LocalPlayer.Name].Head["_overhead"]:Destroy()
 end
 
--- Made by RIP#6666
+
+
+if game.PlaceId == 8349889591 then
+	repeat wait() until game:IsLoaded()
+	task.wait(20)
+	-- Made by RIP#6666
 _G.Settings = {
     Players = {
         ["Ignore Me"] = true, -- Ignore your Character
@@ -84,12 +89,6 @@ _G.Settings = {
     }
 }
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/FPSBooster.lua"))()
-
-
-
-if game.PlaceId == 8349889591 then
-	repeat wait() until game:IsLoaded()
-	task.wait(20)
 	_G.a = true 
 	while _G.a do
 		task.wait()
