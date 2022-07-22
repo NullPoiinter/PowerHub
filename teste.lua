@@ -1,10 +1,10 @@
-local vu = game:GetService("VirtualUser")
-game:GetService("Players").LocalPlayer.Idled:connect(function()
-vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-wait(1)
-vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-end)
+task.wait(2)
+repeat task.wait() until game:IsLoaded()
 
-if game.Players.LocalPlayer.Character.Head:FindFirstChild("_overhead") then
-	workspace[game.Players.LocalPlayer.Name].Head["_overhead"]:Destroy()
+game:GetService("ReplicatedStorage").endpoints.client_to_server.buy_travelling_merchant_item:InvokeServer("star_remnant307129")
+if game.PlaceId == 8304191830 then
+	game:GetService("ReplicatedStorage").endpoints.client_to_server.buy_travelling_merchant_item:InvokeServer("star_remnant307129")
+	if game.Players.LocalPlayer.Character.Head:FindFirstChild("_overhead") then
+		workspace[game.Players.LocalPlayer.Name].Head["_overhead"]:Destroy()
+	end
 end
